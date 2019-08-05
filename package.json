@@ -1,0 +1,11 @@
+{
+  "name": "virtualshop",
+  "version": "1.0.0",
+  "description": "API RESTful Virtual Shop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ivette Hernandez (@ivettelovegood)",
+  "license": "MIT"
+}
