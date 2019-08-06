@@ -18,10 +18,10 @@ function singUp(req, res) {
 }
 
 function singIn(req, res) {
-  User.findOne({ email: req.body.email }, (err, user) => {
+  User.findOne({ email: req.body.email, password: req.body.password }, (err, user) => {
     if (err) return res.status(500).send({ message: err });
     if (!user)
-      return res.status(404).send({ message: "El usuario no existe." });
+      return res.status(404).send({ message: "El usuario o contraseña son incorrectos." });
     req.user = user;
     res.status(200).send({
       message: "Authenticación correcta",
