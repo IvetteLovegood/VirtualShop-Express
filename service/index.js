@@ -21,8 +21,7 @@ function decodeToken(token) {
     try {
       const payload = jwt.decode(token, config.SECRET_TOKEN);
       if (payload.exp < moment().unix()) {
-        //TO DO: Llamar a Reject  para que entre en la Promesa
-        resolve({
+        reject({
           status: 401,
           message: "El token ha expirado"
         });

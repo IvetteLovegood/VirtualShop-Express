@@ -13,7 +13,7 @@ function isAuth(req, res, next) {
     .decodeToken(token)
     .then(response => {
       req.user = response;
-      next()
+      next();
     })
     .catch(response => {
       res.status(response.status);
