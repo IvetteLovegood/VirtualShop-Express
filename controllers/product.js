@@ -43,7 +43,10 @@ function saveProduct(req, res) {
       res
         .status(500)
         .send({ message: `Error al guardar en la base de datos. ${err}` });
-    res.status(200).send({ product: productStored });
+    res.status(200).send({ 
+      message: "El producto se agrego correctamente",
+      product: productStored 
+    });
   });
 }
 function updateProducts(req, res) {
