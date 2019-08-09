@@ -13,7 +13,10 @@ function singUp(req, res) {
   user.save(err => {
     if (err)
       res.status(500).send({ message: `Error al crear el usuario ${err}` });
-    return res.status(201).send({ token: service.createToken(user) });
+    return res.status(201).send({ 
+      token: service.createToken(user),
+       user
+    });
   });
 }
 
@@ -36,7 +39,7 @@ function singIn(req, res) {
 }
 
 function getUser(req, res) {
-  let userId = req.params.email;
+  let userId = req.params.userId;
   User.findById(userId, (err, user) => {
     if (err)
       return res
