@@ -14,8 +14,7 @@ function singUp(req, res) {
     if (err)
       res.status(500).send({ message: `Error al crear el usuario ${err}` });
     return res.status(201).send({ 
-      token: service.createToken(user),
-       user
+      token: service.createToken(user) 
     });
   });
 }
