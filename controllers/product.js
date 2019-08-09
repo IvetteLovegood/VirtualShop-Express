@@ -57,7 +57,9 @@ function updateProducts(req, res) {
       res
         .status(500)
         .send({ message: `Error al guardar en la base de datos. ${err}` });
-    res.status(200).send({ product: productUpdated });
+    res.status(200).send({ 
+      message: "El producto se actualizo correctamente",
+      product: productUpdated });
   });
 }
 function deleteProduct(req, res) {
