@@ -33,7 +33,8 @@ function singIn(req, res) {
       req.user = user;
       res.status(200).send({
         message: "Authenticación correcta",
-        token: service.createToken(user)
+        token: service.createToken(user),
+        user: user
       });
     }
   );
