@@ -8,43 +8,68 @@ https://api-rest-virtualshop.herokuapp.com/api/
 
 ### Autenticación
 
-`Publica` `POST` `/singin`: Auntenticación de usuarios. Responde con un token JWT que es necesario para las demás peticiones.
+`Pública` **POST** `/singin`: Auntenticación de usuarios. Responde con un token JWT que es necesario para las demás peticiones.
 
-`Publica` `POST` `/singup`: Registro de usuarios. Responde con un token JWT que es necesario para las demás peticiones.
+`{
+	"email" : String
+	"password": String
+}`
+
+`Pública` **POST** `/singup`: Registro de usuarios. Responde con un token JWT que es necesario para las demás peticiones.
+
+`{
+	"name": String
+	"email" : String
+	"password": String
+}`
 
 ### Usuarios
 
-`Privada` `GET` `/user`: Obtiene la lista de todos los usuarios registrados
+`Privada` **GET** `/user`: Obtiene la lista de todos los usuarios registrados
 
-`Privada` `GET` `/user/{:userId}`: Obtiene el detalle del usuario solicitado
+`Privada` **GET** `/user/{:userId}`: Obtiene el detalle del usuario solicitado
 
-`Privada` `PUT` `/user/{:userId}`: Modifica los datos del usuario
+`Privada` **PUT** `/user/{:userId}`: Modifica los datos del usuario
 
-`Privada` `DELETE` `/user/{:userId}`: Elimina el usuario especificado
+`Privada` **DELETE** `/user/{:userId}`: Elimina el usuario especificado
 
 ### Producto
 
-`Privada` `POST` `/product`: Agrega un artículo o producto
+`Privada` **POST** `/product`: Agrega un artículo o producto
 
-`Privada` `GET` `/product`: Obtiene la lista de todos los productos
+`{
+	"nombre": String
+	"imagen" : String
+	"precio": String
+  "descripcion": String
+}`
 
-`Privada` `GET` `/product/{:productId}`: Obtiene el detalle del producto solicitado
+`Privada` **GET** `/product`: Obtiene la lista de todos los productos
 
-`Privada` `PUT` `/product/{:productId}`: Modifica los datos del producto
+`Privada` **GET** `/product/{:productId}`: Obtiene el detalle del producto solicitado
 
-`Privada` `DELETE` `/product/{:productId}`: Elimina el producto especificado
+`Privada` **PUT** `/product/{:productId}`: Modifica los datos del producto
+
+`Privada` **DELETE** `/product/{:productId}`: Elimina el producto especificado
 
 ### Pedido
 
-`Privada` `POST` `/order`: Agrega un pedido
+`Privada` **POST** `/order`: Agrega un pedido
 
-`Privada` `GET` `/order`: Obtiene la lista de todos los pedidos
+`{
+	"direccion": String
+	"lat_long": String
+	"id_usuario": "String
+	"id_articulo": String
+}`
 
-`Privada` `GET` `/order/{:orderId}`: Obtiene el detalle del pedido solicitado
+`Privada` **GET** `/order`: Obtiene la lista de todos los pedidos
 
-`Privada` `PUT` `/order/{:orderId}`: Modifica los datos del pedido
+`Privada` **GET** `/order/{:orderId}`: Obtiene el detalle del pedido solicitado
 
-`Privada` `DELETE` `/order/{:orderId}`: Elimina el pedido especificado
+`Privada` **PUT** `/order/{:orderId}`: Modifica los datos del pedido
+
+`Privada` **DELETE** `/order/{:orderId}`: Elimina el pedido especificado
 
 ### Ejecución Local
 
