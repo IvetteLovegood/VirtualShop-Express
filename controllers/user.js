@@ -13,10 +13,9 @@ function singUp(req, res) {
   user.save((err, userStored) => {
     if (err)
       res.status(500).send({ message: `Error al crear el usuario ${err}` });
-    return res.status(201).send({ 
+      return res.status(201).send({ 
       token: service.createToken(user) ,
       user: userStored
-
     });
   });
 }
@@ -72,7 +71,9 @@ function updateUser(req, res) {
       res
         .status(500)
         .send({ message: `Error al guardar en la base de datos. ${err}` });
-    res.status(200).send({ user: userUpdated });
+    res.status(200).send({ 
+      message: "El usuario ha sido modificado exitosamente",
+      user: userUpdated });
   });
 }
 
