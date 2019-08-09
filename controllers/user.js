@@ -37,7 +37,7 @@ function singIn(req, res) {
 
 function getUser(req, res) {
   let userId = req.params.email;
-  User.findById(email, (err, user) => {
+  User.findById(userId, (err, user) => {
     if (err)
       return res
         .status(500)
@@ -46,7 +46,7 @@ function getUser(req, res) {
     res.status(200).send({ user });
   });
 }
- 
+
 function getUsers(req, res) {
   User.find({}, (err, user) => {
     if (err)
