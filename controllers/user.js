@@ -10,11 +10,13 @@ function singUp(req, res) {
     password: req.body.password
   });
 
-  user.save(err => {
+  user.save((err, userStored) => {
     if (err)
       res.status(500).send({ message: `Error al crear el usuario ${err}` });
     return res.status(201).send({ 
-      token: service.createToken(user) 
+      token: service.createToken(user) ,
+      user: userStored
+
     });
   });
 }
