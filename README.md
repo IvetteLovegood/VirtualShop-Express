@@ -8,7 +8,7 @@ https://api-rest-virtualshop.herokuapp.com/api/
 
 ### Autenticación
 
-`Pública` **POST** `/singin`: Auntenticación de usuarios. Responde con un token JWT que es necesario para las demás peticiones.
+`Pública` **POST** `/signin`: Auntenticación de usuarios. Responde con un token JWT que es necesario para las demás peticiones.
 
 `{
 	"email" : String
